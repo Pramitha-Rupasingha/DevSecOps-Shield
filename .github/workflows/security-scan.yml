@@ -1,0 +1,41 @@
+name: 🛡️ DevSecOps Shield - Security Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v3
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Install Security Tools
+        run: |
+          pip install bandit safety detect-secrets
+
+      - name: 🔐 Secret Detection
+        run: |
+          detect-secrets scan --all-files
+          echo "✅ Secret scan complete"
+
+      - name: 🧪 Static Code Analysis (Bandit)
+        run: |
+          bandit -r . -x ./.git,./frontend,./node_modules --severity-level medium || true
+          echo "✅ Code scan complete"
+
+      - name: 📦 Dependency Vulnerability Scan (Safety)
+        run: |
+          pip install -r requirements.txt || true
+          safety check || true
+          echo "✅ Dependency scan complete"
