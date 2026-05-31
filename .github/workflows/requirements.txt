@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+bandit
+safety
+detect-secrets
+boto3
+python-dotenv
+requests
+colorama
