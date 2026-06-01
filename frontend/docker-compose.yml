@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: devsecops-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./scanner:/app/scanner
+    environment:
+      - PYTHONPATH=/app
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: devsecops-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
