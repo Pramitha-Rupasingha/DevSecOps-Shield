@@ -1,0 +1,28 @@
+{
+  "risk_score": 100,
+  "risk_level": "LOW",
+  "verdict": "\u2705 SAFE TO DEPLOY",
+  "bandit": {
+    "status": "clean",
+    "issues": [],
+    "count": 0
+  },
+  "secrets": {
+    "status": "clean",
+    "secrets": {},
+    "count": 0
+  },
+  "dependencies": {
+    "status": "clean",
+    "vulnerabilities": [],
+    "count": 0
+  },
+  "container": {
+    "status": "error",
+    "vulnerabilities": [],
+    "count": 0,
+    "critical": 0,
+    "high": 0,
+    "medium": 0
+  }
+}

@@ -11,7 +11,7 @@ def run_bandit_scan(target_path="."):
     
     try:
         result = subprocess.run(
-            ["bandit", "-r", target_path, "-f", "json", 
+            ["python", "-m", "bandit", "-r", target_path, "-f", "json",
              "-x", ".git,frontend,node_modules"],
             capture_output=True,
             text=True
@@ -48,7 +48,7 @@ def run_secret_scan(target_path="."):
     
     try:
         result = subprocess.run(
-            ["detect-secrets", "scan", target_path],
+            ["python", "-m", "detect_secrets", "scan", target_path],
             capture_output=True,
             text=True
         )

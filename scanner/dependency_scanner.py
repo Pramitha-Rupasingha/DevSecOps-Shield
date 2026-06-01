@@ -10,7 +10,7 @@ def run_safety_scan():
     
     try:
         result = subprocess.run(
-            ["safety", "check", "--json"],
+            ["python", "-m", "safety", "check", "--json"],
             capture_output=True,
             text=True
         )
@@ -55,7 +55,7 @@ if __name__ == "__main__":
     print(f"🛡️  DevSecOps Shield - Dependency Scanner")
     print(f"{'='*50}{Style.RESET_ALL}")
     
-    result = run_dependency_scan()
+    result = run_safety_scan()
     
     print(f"\n{Fore.CYAN}📊 Scan Summary:{Style.RESET_ALL}")
     print(f"  Vulnerabilities Found : {result['count']}")
