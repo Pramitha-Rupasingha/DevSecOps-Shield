@@ -10,7 +10,7 @@ function App() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch('http://127.0.0.1:8000/scan/full', {
+      const response = await fetch('http://13.235.246.11:8000/scan/full', {
         method: 'POST',
       });
       const data = await response.json();
