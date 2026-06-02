@@ -3,7 +3,7 @@
 <img width="1843" height="787" alt="image" src="https://github.com/user-attachments/assets/e6ebadd2-841e-48cd-a561-33616e4b5289" />
 <img width="1290" height="837" alt="image" src="https://github.com/user-attachments/assets/395063bb-972d-4e4e-8c2a-fcce172fb518" />
 
-
+---
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?style=flat-square&logo=python)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-CI%2FCD-black?style=flat-square&logo=githubactions)
