@@ -1,6 +1,7 @@
 # 🛡️ DevSecOps Shield
 ### AI-Powered DevSecOps Security Pipeline
-<img width="1843" height="787" alt="image" src="https://github.com/user-attachments/assets/e6ebadd2-841e-48cd-a561-33616e4b5289" />
+
+<img width="1112" height="792" alt="Screenshot 2026-06-03 035200" src="https://github.com/user-attachments/assets/bb3aa9b4-bad2-400d-b7a7-bdff2db31fb1" />
 <img width="1290" height="837" alt="image" src="https://github.com/user-attachments/assets/395063bb-972d-4e4e-8c2a-fcce172fb518" />
 
 ---
