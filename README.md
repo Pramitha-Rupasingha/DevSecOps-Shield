@@ -1,9 +1,10 @@
 # 🛡️ DevSecOps Shield
 ### AI-Powered DevSecOps Security Pipeline
 
-![Python](https://img.shields.io/badge/Python-3.14-blue?style=flat-square&logo=python)
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=flat-square&logo=python)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-CI%2FCD-black?style=flat-square&logo=githubactions)
-![AWS](https://img.shields.io/badge/AWS-Cloud-orange?style=flat-square&logo=amazonaws)
+![AWS](https://img.shields.io/badge/AWS-EC2-orange?style=flat-square&logo=amazonaws)
+![Docker](https://img.shields.io/badge/Docker-Containerized-blue?style=flat-square&logo=docker)
 ![Security](https://img.shields.io/badge/Security-DevSecOps-red?style=flat-square&logo=shield)
 
 ---
@@ -52,8 +53,11 @@ DevSecOps-Shield/
 ├── .github/
 │   └── workflows/         ← GitHub Actions CI/CD pipelines
 ├── frontend/              ← React security dashboard
+│   └── Dockerfile
 ├── backend/               ← FastAPI backend
+│   └── Dockerfile
 ├── scanner/               ← Security scanning modules
+├── docker-compose.yml     ← Container orchestration
 └── README.md
 
 ---
@@ -69,24 +73,48 @@ DevSecOps-Shield/
 | Container Scan | Trivy |
 | Backend | Python / FastAPI |
 | Frontend | React |
-| Cloud | AWS EC2, S3, IAM |
+| Containerization | Docker + Docker Compose |
+| Cloud | AWS EC2 |
 | AI Risk Scoring | Claude AI |
 
 ---
 
-## ⚙️ Installation
+## 🐳 Docker Setup
 
 ```bash
 # Clone repository
 git clone https://github.com/Pramitha-Rupasingha/DevSecOps-Shield.git
 cd DevSecOps-Shield
 
-# Create virtual environment
-python -m venv venv
-venv\Scripts\activate
+# Run with Docker Compose
+docker compose up --build -d
+
+# Access
+# Frontend: http://localhost
+# Backend API: http://localhost:8000
+# Swagger UI: http://localhost:8000/docs
+```
+
+---
+
+## ⚙️ Manual Setup
+
+```bash
+# Clone repository
+git clone https://github.com/Pramitha-Rupasingha/DevSecOps-Shield.git
+cd DevSecOps-Shield
 
 # Install dependencies
-pip install fastapi uvicorn bandit safety detect-secrets boto3 python-dotenv
+pip install -r requirements.txt
+
+# Run backend
+cd backend
+python -m uvicorn main:app --reload
+
+# Run frontend
+cd frontend
+npm install
+npm start
 ```
 
 ---
@@ -96,7 +124,7 @@ pip install fastapi uvicorn bandit safety detect-secrets boto3 python-dotenv
 Create `.env` file in root:
 AWS_ACCESS_KEY_ID=your_access_key
 AWS_SECRET_ACCESS_KEY=your_secret_key
-AWS_REGION=us-east-1
+AWS_REGION=ap-south-1
 
 ---
 
@@ -112,6 +140,16 @@ AWS_REGION=us-east-1
 → Critical: 2  High: 5  Medium: 8
 🤖 AI Risk Score: 35/100
 ❌ CRITICAL — Deployment Blocked
+
+---
+
+## 🌐 Live Demo
+
+| Service | URL |
+|---------|-----|
+| 🖥️ Frontend Dashboard | http://13.235.246.11 |
+| 🔌 Backend API | http://13.235.246.11:8000 |
+| 📖 Swagger UI | http://13.235.246.11:8000/docs |
 
 ---
 
